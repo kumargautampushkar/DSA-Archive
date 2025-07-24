@@ -1,0 +1,1 @@
+{"name":"Local: gg","url":"f:\\coding\\DSA-Archive\\leetcode\\gg.cpp","tests":[{"id":1752376850551,"input":"a#b%*","output":""},{"id":1752377135707,"input":"*%","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\coding\\DSA-Archive\\leetcode\\gg.cpp","group":"local","local":true}
