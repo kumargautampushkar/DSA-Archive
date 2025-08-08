@@ -44,12 +44,12 @@ bool canPlace(vector<vector<int>> &board,int p, int q, int n){
 }
 
 
-bool solveBoard(int n, vector <vector<int>> &board, int i){
+bool solveBoard(int n, vector <vector<int>> &board, int i,int &count){
     if(i==n){
         printBoard(board,n,n);
-        return true;
-        //cout<<endl;
-        //return false;
+        count++;
+        cout<<endl;
+        return false;
     }
 
     for(int j = 0;j<n;j++){
@@ -58,7 +58,7 @@ bool solveBoard(int n, vector <vector<int>> &board, int i){
         // if safe, place queen and go to next recursive call, move next
         if(canPlaceable){
             board[i][j]=1;
-            bool success = solveBoard(n,board,i+1);
+            bool success = solveBoard(n,board,i+1,count);
             if(success) return true;
             board[i][j]=0;
         }
@@ -71,7 +71,9 @@ int main(int argc, char const *argv[])
 {
     int n;cin>>n;
     auto board = inputBoard(n);
-    auto ans = solveBoard(n,board,0);
+    int count = 0;
+    auto ans = solveBoard(n,board,0,count);
+    cout<<count<<endl;
     // printBoard(board,n,n);
     return 0;
 }
