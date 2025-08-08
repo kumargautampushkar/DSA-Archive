@@ -23,7 +23,26 @@ void printSudoku(vector<vector<int>> &sudoku){
     return;
 }
 
+bool isSafe(vector<vector<int>> &sudoku,int i, int j, int num){
 
+    // check for row and column
+    for(int w=0;w<9;w++){
+        if(sudoku[w][j] == num || sudoku[i][w] == num) return false;
+    }
+
+    int sx = (i/3)*3;
+    int sy = (j/3)*3;
+
+    for(int p = sx;p<sx+3;p++){
+        for(int q = sy;q<sy+3;q++){
+            if(sudoku[p][q]== num)
+                return false;
+        }
+    }
+
+    return true;
+
+}
 
 int main(int argc, char const *argv[])
 {
